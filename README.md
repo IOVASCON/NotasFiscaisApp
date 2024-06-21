@@ -24,7 +24,7 @@ O **NotasFiscaisApp** é uma aplicação Java para controle de notas fiscais, ut
 
 A estrutura do projeto está organizada conforme mostrado na imagem abaixo:
 
-![Estrutura do Projeto](Estrutura-005.PNG)
+![Estrutura do Projeto](images/Estrutura-005.PNG)
 
 ## Interfaces Gráficas
 
