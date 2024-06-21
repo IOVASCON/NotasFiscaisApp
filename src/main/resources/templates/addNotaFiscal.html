@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adicionar Nota Fiscal</title>
+</head>
+<body>
+    <h1>Adicionar Nota Fiscal</h1>
+    <!-- Formulário para adicionar uma nova nota fiscal -->
+    <form th:action="@{/notasfiscais}" th:object="${notaFiscal}" method="post">
+        <!-- Campo para número da nota fiscal -->
+        <label for="numeroNota">Número da Nota:</label>
+        <input type="text" id="numeroNota" th:field="*{numeroNota}" /><br/><br/>
+
+        <!-- Campo para data da nota fiscal -->
+        <label for="dataNota">Data da Nota:</label>
+        <input type="text" id="dataNota" th:field="*{dataNota}" /><br/><br/>
+
+        <!-- Campo para valor da nota fiscal -->
+        <label for="valorNota">Valor da Nota:</label>
+        <input type="text" id="valorNota" th:field="*{valorNota}" /><br/><br/>
+
+        <!-- Campo para fornecedor -->
+        <label for="fornecedor">Fornecedor:</label>
+        <input type="text" id="fornecedor" th:field="*{fornecedor}" /><br/><br/>
+
+        <!-- Campo para produto -->
+        <label for="produto">Produto:</label>
+        <input type="text" id="produto" th:field="*{produto}" /><br/><br/>
+
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+</html>

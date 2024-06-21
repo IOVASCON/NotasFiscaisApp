@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Notas Fiscais</title>
+</head>
+<body>
+    <h1>Lista de Notas Fiscais</h1>
+    <!-- Tabela para exibir a lista de notas fiscais -->
+    <table border="1">
+        <tr>
+            <!-- Cabeçalhos da tabela -->
+            <th>ID</th>
+            <th>Número da Nota</th>
+            <th>Data da Nota</th>
+            <th>Valor da Nota</th>
+            <th>Fornecedor</th>
+            <th>Produto</th>
+        </tr>
+        <!-- Iteração sobre a lista de notas fiscais -->
+        <tr th:each="notaFiscal : ${notasFiscais}">
+            <!-- Colunas da tabela preenchidas com os valores das notas fiscais -->
+            <td th:text="${notaFiscal.id}"></td>
+            <td th:text="${notaFiscal.numeroNota}"></td>
+            <td th:text="${notaFiscal.dataNota}"></td>
+            <td th:text="${notaFiscal.valorNota}"></td>
+            <td th:text="${notaFiscal.fornecedor}"></td>
+            <td th:text="${notaFiscal.produto}"></td>
+        </tr>
+    </table>
+    <!-- Link para adicionar uma nova nota fiscal -->
+    <a href="/notasfiscais/novo">Adicionar nova Nota Fiscal</a>
+</body>
+</html>

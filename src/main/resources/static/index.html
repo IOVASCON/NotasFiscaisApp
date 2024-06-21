@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Nota Fiscal</title>
+    <style>
+        /* Estilos básicos para o corpo e a formatação do formulário */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Adicionar Nota Fiscal</h2>
+        <!-- Formulário para adicionar uma nova nota fiscal -->
+        <form id="notaFiscalForm">
+            <!-- Campo para número da nota fiscal -->
+            <label for="numeroNota">Número da Nota</label>
+            <input type="number" id="numeroNota" name="numeroNota" required>
+            
+            <!-- Campo para data da nota fiscal -->
+            <label for="dataNota">Data da Nota</label>
+            <input type="text" id="dataNota" name="dataNota" placeholder="dd/MM/yyyy" required>
+            
+            <!-- Campo para valor da nota fiscal -->
+            <label for="valorNota">Valor da Nota</label>
+            <input type="number" id="valorNota" name="valorNota" step="0.01" required>
+            
+            <!-- Campo para fornecedor -->
+            <label for="fornecedor">Fornecedor</label>
+            <input type="text" id="fornecedor" name="fornecedor" required>
+            
+            <!-- Campo para produto -->
+            <label for="produto">Produto</label>
+            <input type="text" id="produto" name="produto" required>
+            
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Adicionar Nota Fiscal</button>
+        </form>
+    </div>
+
+    <script>
+        // Adiciona um evento para o envio do formulário
+        document.getElementById('notaFiscalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Coleta os dados do formulário
+            const data = {
+                numeroNota: document.getElementById('numeroNota').value,
+                dataNota: document.getElementById('dataNota').value,
+                valorNota: document.getElementById('valorNota').value,
+                fornecedor: document.getElementById('fornecedor').value,
+                produto: document.getElementById('produto').value
+            };
+
+            // Envia os dados para o servidor usando uma requisição POST
+            fetch('/notasfiscais', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Nota Fiscal adicionada com sucesso!');
+                document.getElementById('notaFiscalForm').reset();
+            })
+            .catch(error => {
+                alert('Erro ao adicionar Nota Fiscal: ' + error);
+            });
+        });
+    </script>
+</body>
+</html>

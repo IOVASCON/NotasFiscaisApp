@@ -1,0 +1,8 @@
+com\izairton\notasfiscaisapp\MainApp.class
+com\izairton\notasfiscaisapp\controller\TestController.class
+com\izairton\notasfiscaisapp\repository\NotaFiscalRepository.class
+com\izairton\notasfiscaisapp\Application.class
+com\izairton\notasfiscaisapp\controller\NotaFiscalController.class
+com\izairton\notasfiscaisapp\model\NotaFiscal.class
+com\izairton\notasfiscaisapp\AppConfig.class
+com\izairton\notasfiscaisapp\service\NotaFiscalService.class

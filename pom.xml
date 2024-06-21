@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.w3.org/2001/XMLSchema-instance/maven-4.0.0.xsd">
+    
+    <!-- Versão do modelo POM -->
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- Identificação do projeto -->
+    <groupId>com.izairton</groupId>
+    <artifactId>notasfiscaisapp</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <!-- Nome e descrição do projeto -->
+    <name>NotasFiscaisApp</name>
+    <description>Aplicativo para controle de Notas Fiscais usando Spring Data JPA</description>
+
+    <!-- Configuração do projeto pai Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath/> <!-- Procura o pai no repositório -->
+    </parent>
+
+    <properties>
+        <!-- Versão do Java utilizada -->
+        <java.version>11</java.version>
+        <!-- Versão do Spring Boot utilizada -->
+        <spring-boot.version>2.7.3</spring-boot.version>
+    </properties>
+
+    <dependencies>
+        <!-- Dependência do Spring Data JPA -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- Dependência do Spring Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Dependência do driver PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- Dependência para testes Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Dependência do Hibernate Validator -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.5.Final</version>
+        </dependency>
+        <!-- Dependência do Java Expression Language -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        
+        <!-- Dependências do JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>17.0.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin do Spring Boot para construção do projeto -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <!-- Classe principal do Spring Boot -->
+                    <mainClass>com.izairton.notasfiscaisapp.Application</mainClass>
+                </configuration>
+            </plugin>
+            
+            <!-- Plugin do JavaFX para construção do projeto -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <!-- Classe principal do JavaFX -->
+                    <mainClass>com.izairton.notasfiscaisapp.MainApp</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
