@@ -2,7 +2,9 @@
 
 ## Descrição
 
-O **NotasFiscaisApp** é uma aplicação Java para controle de notas fiscais, utilizando Spring Boot, Spring Data JPA, PostgreSQL e interfaces gráficas HTML e JavaFX. A aplicação permite adicionar, listar, atualizar e excluir notas fiscais.
+Projeto de aprendizado envolvendo COLABORADORES.
+
+O **NotasFiscaisApp** é uma aplicação Java para controle de notas fiscais, utilizando Spring Boot, Spring Data JPA, PostgreSQL e interfaces gráficas HTML e JavaFX. A aplicação permite adicionar, listar, atualizar e excluir notas fiscais. 
 
 ## Funcionalidades
 
